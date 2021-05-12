@@ -1,4 +1,5 @@
 export default {
+    namespaced: true, // prods: Productsmodule in index.js
     state(){
         return {
             products: [

@@ -5,9 +5,10 @@ import router from './router.js'
 
 import BaseDesign from './components/ui/BaseDesign.vue'
 
-app.use(store);
+
 const app = createApp(App);
 
+app.use(store);
 app.component('base-design', BaseDesign)
 app.use(store);
 app.use(router);
