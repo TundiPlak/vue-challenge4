@@ -22,7 +22,7 @@
       <button v-if="isLoggedIn" @click="logout">Logout</button>
     </div>
 
-    <h3>{{ $store.state.counter }}</h3>
+    <!--<h3>{{ $store.state.counter }}</h3>-->
     <button @click="addOne">Add 1</button>
   </header>
 </template>
