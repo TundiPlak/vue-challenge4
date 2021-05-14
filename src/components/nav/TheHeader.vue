@@ -30,6 +30,17 @@ export default {
     cartQuantity() {
       return this.$store.getters["cart/quantity"]; //cart is my namepace, quantity is the getter from cart.js
     },
+    isLoggedIn() {
+      return this.$store.getters.isAuthenticated;
+    },
+  },
+  methods: {
+    login() {
+      this.$store.dispatch("login"); //no namespace, is a root action directly in the store
+    },
+    logout() {
+      this.$store.dispatch("logout"); //action dispatched
+    },
   },
 };
 </script>
