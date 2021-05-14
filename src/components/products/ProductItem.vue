@@ -25,12 +25,14 @@ export default {
   props: ["id", "title", "description", "price", "image"],
   methods: {
     addToCart() {
-      this.addProductToCart({
+      this.$store.dispatch("cart/addToCart", {
+        // 'addToCart' is the cart.js action, is namspaced, so cart/....
         id: this.id,
-        image: this.image,
-        title: this.title,
-        price: this.price,
-      });
+        //image: this.image,
+        //title: this.title,   this 3 is already passed in the store, in product.js
+        //price: this.price,
+      }); //second argument is an object (payload)
+      // in cart.js mutations addProductToCart payload is defined as the productdata
     },
   },
 };

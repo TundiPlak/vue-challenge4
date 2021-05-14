@@ -9,7 +9,7 @@
         </li>
         <li>
           <router-link to="/cart">Cart</router-link>
-          <base-design mode="green">{{ cart.qty }}</base-design>
+          <base-design mode="green">{{ cartQuantity }}</base-design>
         </li>
         <li v-if="isLoggedIn">
           <router-link to="/admin">Admin</router-link>
@@ -21,15 +21,16 @@
       <button v-if="!isLoggedIn" @click="login">Login</button>
       <button v-if="isLoggedIn" @click="logout">Logout</button>
     </div>
-
-    <!--<h3>{{ $store.state.counter }}</h3>-->
-    <button @click="addOne">Add 1</button>
   </header>
 </template>
 
 <script>
 export default {
-  inject: ["isLoggedIn", "cart", "login", "logout"],
+  computed: {
+    cartQuantity() {
+      return this.$store.getters["cart/quantity"]; //cart is my namepace, quantity is the getter from cart.js
+    },
+  },
 };
 </script>
 

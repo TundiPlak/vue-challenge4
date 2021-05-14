@@ -16,13 +16,6 @@ export default {
       isLoggedIn: false,
     };
   },
-  provide() {
-    return {
-      isLoggedIn: this.isLoggedIn,
-      login: this.login,
-      logout: this.logout,
-    };
-  },
   methods: {
     login() {
       this.isLoggedIn = true;
